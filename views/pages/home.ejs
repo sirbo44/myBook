@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>2nd image</title>
+        <style>
+            body{
+                background-color: #8389de;
+            }
+            img{
+                background-color: #fff;
+                height:15rem;
+            }
+            label{
+                border: 5px solid black;
+                margin-top: 40px;
+                font-size: 60px;
+                text-align: center;
+            }
+            .card{
+                margin-left: 150px;
+            }
+            #cards{
+                margin-top:7%;
+            }
+            .username{
+                font-size: 30px;
+                margin-left: 10px;
+                width: 120px;
+                height: 60px;
+                font-weight: bold;
+                color: #000;
+            }
+            .btn {
+            border: 3px solid #000;
+            border-radius: 0%;
+            color:#000;
+            background-color: #8389de;
+            font-weight: bold;
+            font-size: 22px;
+            min-width: 120px;
+        }
+        .card{
+            background-color: #00000000;
+            border: 0px;
+            font-weight: bold;
+            font-size: 22px;
+            color: #000;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-lg-2">
+                <a href="./user/<%= username%>"><img src="<%= image%>" alt="My profilesss image"></a>
+                <label class="username"><%= username%></label>
+            </div>
+            <div class="col col-lg-6">
+            </div>
+            <div class="col col-lg-auto">
+                <a href="/logout"><button type="submit" class="mt-1 btn">Log out</button></a>
+            </div>
+        </div>
+        <div class="row" id="cards">
+            <% for (let i=0;i<user.length;i++) { %>
+                <% if(user[i].username !== username) { %>
+                    <a href="./user/<%= user[i].username %>">
+                        <div class="card" style="width: 18rem;">
+                            <img src="<%= user[i].image%>" class="card-img-top" alt="..."> 
+                            <div class="card-body">
+                                <p class="card-text"><%= user[i].username%></p>
+                                <p class="card-text"><%= user[i].name%></p>
+                                <p class="card-text"><%= user[i].age%></p>
+                                <p class="card-text"><%= user[i].email%></p>
+                                <p class="card-text"><%= user[i].gender%></p>
+                            </div>
+                        </div>
+                    </a>
+                <% } %>
+            <% } %>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+</html>

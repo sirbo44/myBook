@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>User Profile</title>
+    <style>
+        body{
+            background-color: #8389de;
+            font-family: Graviola, sans-serif;
+            font-size: 22px;
+        }
+        @font-face {
+            font-family: 'Graviola';
+            src: url('GraviolaSoft-MediumItalic.otf');
+        }
+        .img-container img{
+            min-width: 150px;
+            min-height: 150px; 
+            object-fit: cover;
+            width: 40%;
+        }
+        .container-custom{
+            padding: 15px;
+        }
+        .value-label{
+            font-weight: bold;
+            border: 3px solid #000;
+            margin-left: 14px;
+        }
+        .btn {
+            border: 3px solid #000;
+            border-radius: 0%;
+            color:#000;
+            background-color: #8389de;
+            font-weight: bold;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid container-custom mb-3">
+        <div>
+            <div class="row">
+                <div class="p-1 img-container col-1">
+                    <img src="proxy-image.jpg" alt="user picture">
+                </div>
+                <div class="col-2">
+                    <p class="offset-1" name="name"><%= user.name%></p>
+                </div>
+                <div class="col-5"></div>
+                <div class="col-1">
+                    <button type="submit" class="mt-1 btn">Log out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row"></div>
+    <div class="container-fluid mb-3">
+        <div class="row">
+            <div class="col-1 value-label">
+                <p>Age</p>
+            </div>
+            <div class="col-1 value">
+                <p name="age"><%= user.age%></p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mb-3">
+        <div class="row">
+            <div class="col-1 value-label">
+                <p>e-mail</p>
+            </div>
+            <div class="col-1 value">
+                <p name="email"><%= user.email%></p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mb-3">
+        <div class="row">
+            <div class="col-1 value-label">
+                <p>gender</p>
+            </div>
+            <div class="col-1 value">
+                <p name="gender"><%= user.gender%></p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mb-3">
+        <div class="row">
+            <div class="col-1 value-label">
+                <p>Interests</p>
+            </div>
+            <div class="col-3 value">
+                <p name="interests"><%= user.interests%></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
